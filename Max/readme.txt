@@ -1,0 +1,1 @@
+Download and install Max Runtime for OS X: http://cycling74.com/downloads/runtime/Open ambisonics.maxpat with Max Runtime (32-bit).Should just work with the 8-channel system. Double click on the [dac~] object to get to audio settings – make sure your audio interface is selected.
