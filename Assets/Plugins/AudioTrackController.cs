@@ -34,7 +34,7 @@ public class AudioTrackController : MonoBehaviour {
 		trackToObject = new AudioObject[numTracks];
 		
 		// find sim bounds to determine y-position range
-		var box = GameObject.Find ("SimulationBounds").GetComponent<BoxCollider>();
+		var box = GameObject.Find ("AudioBounds").GetComponent<BoxCollider>();
 		bottom = box.transform.TransformPoint(box.center - 0.5f * box.size).y;
 		top = box.transform.TransformPoint(box.center + 0.5f * box.size).y;
 		
@@ -48,14 +48,17 @@ public class AudioTrackController : MonoBehaviour {
 		if (inst == this) { inst = null; }
 		StopAllCoroutines();
 		for(int i=0; i<numTracks; ++i) {
-			//SoundController.inst.SendMute(i+1);
+//			SoundController.inst.SendMute(i+1);
 		}
 	}
 	
 	public void Attach(int track, AudioObject obj) {
 		// attach the given object to the given track
-		if(track<numTracks-1){
-//			trackToObject[track] = obj;
+		if(track<numTracks){
+			Debug.Log(track);
+			Debug.Log (numTracks);
+			trackToObject[track] = obj;
+
 		}
 	}
 	
@@ -89,6 +92,8 @@ public class AudioTrackController : MonoBehaviour {
 			SoundController.inst.SendSpread(i+1, curr.spread);
 			while(curr == trackToObject[i] && trackToObject[i] != null) {
 				var pos = Mathf.InverseLerp(bottom, top, curr.transform.position.y);
+				//var pos = curr.transform.position.y*200.0f;
+
 				if(pos != oldPos){
 				SoundController.inst.SendPosition(i+1, pos);
 				}

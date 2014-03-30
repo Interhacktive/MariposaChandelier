@@ -12,9 +12,10 @@ public class AudioObject : MonoBehaviour
 	// to interact with AudioTrackColliders, or else they can be attached
 	// dynamically in scripts due to any other kind of content logic.
 
-	public int soundID = 1;
+	public int soundID = 0;
 	public bool loop = false;
 	public float spread = 0;
+
 	AudioObject curr = null;
 	int curTrack = 0;
 	void Start ()

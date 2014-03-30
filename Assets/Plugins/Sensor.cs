@@ -6,8 +6,10 @@ public class Sensor : MonoBehaviour {
 	// receives messages when the sensor is triggered
 
 	public bool triggered = false;//was in nonserialized
+	public int currentReading = 0;
+	public int triggerOff = 150;
+	public int triggerOn = 200;
 
-	
 	public bool upActive = true;
 
 	public int soundIDUp = 1;
@@ -34,18 +36,19 @@ public class Sensor : MonoBehaviour {
 	public event Action<Sensor> onSignal;
 	
 	public void Signal(int signal) {
-		
+		//Debug.Log (signal);
+		currentReading = signal;
 		// handle the given signal, checking against hystersis
 		
 		if (triggered) {
 
 
 
-			if (signal < Calibration.inst.sensorThresholdOff) {
+			if (signal < triggerOff) {//Calibration.inst.sensorThresholdOff
 				triggered = false;
 			}
 		} else {
-			if (signal > Calibration.inst.sensorThresholdOn) {
+			if (signal > triggerOn) {
 				triggered = true;
 
 
@@ -55,7 +58,7 @@ public class Sensor : MonoBehaviour {
 					//Destroy(gameObject);
 					
 				//------
-				//Debug.LogWarning("Triggered!");
+				Debug.LogWarning("Triggered!");
 				if (onSignal != null) {
 					onSignal(this);
 				}
@@ -131,7 +134,12 @@ public class Sensor : MonoBehaviour {
 	}
 
 	void OnDrawGizmoSelected() {
-		Gizmos.DrawIcon(transform.position, "sensorIcon.psd");
+		if(triggered){
+			Gizmos.DrawIcon(transform.position, "hands.png");
+		}else{
+			Gizmos.DrawIcon(transform.position, "sensorIcon.psd");
+			
+		}
 	}
 	
 }
