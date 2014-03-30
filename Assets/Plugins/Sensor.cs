@@ -31,25 +31,32 @@ public class Sensor : MonoBehaviour {
 
 	public GameObject sensorDelegate;
 
+
 	//[NonSerialized]
 	public bool randomColor = true;
 	public event Action<Sensor> onSignal;
-	
+
+
+	bool ableToTrigger = false;
+
 	public void Signal(int signal) {
 		//Debug.Log (signal);
 		currentReading = signal;
 		// handle the given signal, checking against hystersis
-		
+
+		if (signal < triggerOff) {//Calibration.inst.sensorThresholdOff
+			ableToTrigger = true;
+		}
+
 		if (triggered) {
 
+			triggered = false;
 
 
-			if (signal < triggerOff) {//Calibration.inst.sensorThresholdOff
-				triggered = false;
-			}
 		} else {
-			if (signal > triggerOn) {
+			if (signal > triggerOn && ableToTrigger) {
 				triggered = true;
+				ableToTrigger = false;
 
 
 				//-----experiment
