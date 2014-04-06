@@ -55,8 +55,8 @@ public class AudioTrackController : MonoBehaviour {
 	public void Attach(int track, AudioObject obj) {
 		// attach the given object to the given track
 		if(track<numTracks){
-			Debug.Log(track);
-			Debug.Log (numTracks);
+			//Debug.Log(track);
+			//Debug.Log (numTracks);
 			trackToObject[track] = obj;
 
 		}

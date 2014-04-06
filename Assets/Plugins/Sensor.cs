@@ -4,6 +4,7 @@ using System;
 public class Sensor : MonoBehaviour {
 	
 	// receives messages when the sensor is triggered
+	public bool sensorLive = false;
 
 	public bool triggered = false;//was in nonserialized
 	public int currentReading = 0;
@@ -30,6 +31,14 @@ public class Sensor : MonoBehaviour {
 	public Color waveColor;
 
 	public GameObject sensorDelegate;
+
+	public int average = 0;
+	public int threshold  = 100;
+	int[] readings;
+	int total = 0;
+	int index = 0;
+		
+	int numReadings = 5000;
 
 
 	//[NonSerialized]
@@ -92,43 +101,84 @@ public class Sensor : MonoBehaviour {
 		if (sensorDelegate == null) {
 			sensorDelegate = gameObject;
 		}
+
+		//average = new int[numReadings];
+		///total = new int[numReadings];
+		readings = new int[numReadings];
+		for (int i = 0; i<numReadings; i++) {
+		//	average[i] = 0;
+		//	total[i]=0;
+			readings[i] = 0;
+				}
+
 		
 	}
 
+	
+	void averageData(){
+		
+			// subtract the last reading:
+			total = total - readings[index];         
+			// read from the sensor:  
+		readings[index] = currentReading;//analogRead(inputPin); 
+			// add the reading to the total:
+			total = total + readings[index];       
+			// advance to the next position in the array:  
+			index = index + 1;                    
+			
+			// if we're at the end of the array...
+			if (index >= numReadings)              
+				// ...wrap around to the beginning: 
+				index = 0;                           
+			
+			// calculate the average:
+			average = (total / numReadings);         
+			// send it to the computer as ASCII digits
+			// Serial.print(average[sensorNum]);   
+			//Serial.print(' ');
+			//delay(1);        // delay in between reads for stability  
+		triggerOn = average + threshold;
+		triggerOff = average;
+
+	}
+
+
 	void Update(){
-		if(triggered){
-			if(randomColor){
-				waveColor = new Color(UnityEngine.Random.Range(0.0f,1.0f), UnityEngine.Random.Range(0.0f,1.0f), UnityEngine.Random.Range(0.0f,1.0f));
-			}
-			if(upActive){
-		Transform theClonedExplosionUp;
-		theClonedExplosionUp = Instantiate(Up, transform.position, transform.rotation) as Transform;
-				theClonedExplosionUp.GetComponent<TintCollider>().tintColor = waveColor;
-				theClonedExplosionUp.renderer.material.color = waveColor;
-				theClonedExplosionUp.GetComponent<AudioObject>().soundID = soundIDUp;
-				theClonedExplosionUp.GetComponent<AudioObject>().loop = loopUp;
-				theClonedExplosionUp.GetComponent<AudioObject>().spread = spreadUp;
+		if (sensorLive) {
+						if (triggered) {
+								if (randomColor) {
+										waveColor = new Color (UnityEngine.Random.Range (0.0f, 1.0f), UnityEngine.Random.Range (0.0f, 1.0f), UnityEngine.Random.Range (0.0f, 1.0f));
+								}
+								if (upActive) {
+										Transform theClonedExplosionUp;
+										theClonedExplosionUp = Instantiate (Up, transform.position, transform.rotation) as Transform;
+										theClonedExplosionUp.GetComponent<TintCollider> ().tintColor = waveColor;
+										theClonedExplosionUp.renderer.material.color = waveColor;
+										theClonedExplosionUp.GetComponent<AudioObject> ().soundID = soundIDUp;
+										theClonedExplosionUp.GetComponent<AudioObject> ().loop = loopUp;
+										theClonedExplosionUp.GetComponent<AudioObject> ().spread = spreadUp;
 
 
-			}
-			if(downActive){
-			Transform theClonedExplosionDown;
-				theClonedExplosionDown = Instantiate(Down, transform.position, transform.rotation) as Transform;
+								}
+								if (downActive) {
+										Transform theClonedExplosionDown;
+										theClonedExplosionDown = Instantiate (Down, transform.position, transform.rotation) as Transform;
 
-				theClonedExplosionDown.GetComponent<TintCollider>().tintColor = waveColor;
-				theClonedExplosionDown.renderer.material.color = waveColor;
-				theClonedExplosionDown.GetComponent<AudioObject>().soundID = soundIDDown;
-				theClonedExplosionDown.GetComponent<AudioObject>().loop = loopDown;
-				theClonedExplosionDown.GetComponent<AudioObject>().spread = spreadDown;
+										theClonedExplosionDown.GetComponent<TintCollider> ().tintColor = waveColor;
+										theClonedExplosionDown.renderer.material.color = waveColor;
+										theClonedExplosionDown.GetComponent<AudioObject> ().soundID = soundIDDown;
+										theClonedExplosionDown.GetComponent<AudioObject> ().loop = loopDown;
+										theClonedExplosionDown.GetComponent<AudioObject> ().spread = spreadDown;
 
 
-			theClonedExplosionDown = Instantiate(Down, transform.position, transform.rotation) as Transform;
-			}
-			triggered = false;
-		}else{
-			//theClonedExplosionDown.GetComponent(renderer).material.color = Color.red;
-		}
-
+										theClonedExplosionDown = Instantiate (Down, transform.position, transform.rotation) as Transform;
+								}
+								triggered = false;
+						} else {
+								//theClonedExplosionDown.GetComponent(renderer).material.color = Color.red;
+						}
+			averageData();
+				}
 	}
 	
 	void OnDrawGizmos() {

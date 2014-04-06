@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 168.0, 156.0, 836.0, 512.0 ],
+		"rect" : [ 563.0, 152.0, 836.0, 512.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -313,7 +313,8 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 312.166687, 220.0, 50.0, 20.0 ]
+					"patching_rect" : [ 312.166687, 220.0, 50.0, 20.0 ],
+					"varname" : "flonum"
 				}
 
 			}
@@ -1779,17 +1780,18 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 52.0, 452.0, 137.0, 20.0 ],
 					"restore" : 					{
+						"flonum" : [ 0.0 ],
 						"live.gain~[1]" : [ -13.999999 ],
-						"live.gain~[2]" : [ -13.999999 ],
-						"live.gain~[3]" : [ -13.999999 ],
-						"live.gain~[4]" : [ -13.999999 ],
-						"live.gain~[5]" : [ -13.999999 ],
-						"live.gain~[6]" : [ -13.999999 ],
-						"live.gain~[7]" : [ -10.173228 ]
+						"live.gain~[2]" : [ -0.461942 ],
+						"live.gain~[3]" : [ 0.666667 ],
+						"live.gain~[4]" : [ 0.598425 ],
+						"live.gain~[5]" : [ 0.666667 ],
+						"live.gain~[6]" : [ 0.666667 ],
+						"live.gain~[7]" : [ -3.181818 ]
 					}
 ,
 					"text" : "autopattr @autoname 1",
-					"varname" : "u180000454"
+					"varname" : "u886000134"
 				}
 
 			}
@@ -2267,6 +2269,33 @@
 			}
 , 			{
 				"box" : 				{
+					"embed_buffers" : 					{
+						"audio_files.1" : "01_New_Rainforest.wav",
+						"audio_files.2" : "02_Parrots.wav",
+						"audio_files.3" : "03_Bees.wav",
+						"audio_files.4" : "04_Kukulkan.wav",
+						"audio_files.5" : "05_Drums.wav",
+						"audio_files.6" : "06_Ayotl.wav",
+						"audio_files.7" : "07_Tenabaris.wav",
+						"audio_files.8" : "08_Cenote.wav",
+						"audio_files.9" : "09_Jaguar.wav",
+						"audio_files.10" : "10_Cricket.wav",
+						"audio_files.11" : "11_Night Spirits.wav",
+						"audio_files.12" : "12_Red_eyed_tree_frogs.wav",
+						"audio_files.13" : "13_Bats.wav",
+						"audio_files.14" : "14_Nightjar.wav",
+						"audio_files.15" : "15_Margay_Cat.wav",
+						"audio_files.16" : "17_Morning_Yucatan_jay.wav",
+						"audio_files.17" : "18_Morning_Dance.wav",
+						"audio_files.18" : "27_Magic_Voice.wav",
+						"audio_files.19" : "29_Chocolate_Tree.wav",
+						"audio_files.20" : "30_Jaguar_growl.wav",
+						"audio_files.21" : "32_Hurricane.wav",
+						"audio_files.22" : "33_Rain_Thunder_Wind.wav",
+						"audio_files.23" : "35_Slash_burn.wav",
+						"audio_files.24" : "36_Dance_of_the_Corn.wav"
+					}
+,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-5",
@@ -2831,18 +2860,18 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-11" : [ "live.gain~[3]", "live.gain~", 0 ],
+			"obj-12" : [ "live.gain~[4]", "live.gain~", 0 ],
 			"obj-20" : [ "live.gain~[5]", "live.gain~", 0 ],
 			"obj-31" : [ "live.gain~[1]", "live.gain~", 0 ],
 			"obj-25" : [ "live.gain~[6]", "live.gain~", 0 ],
 			"obj-6" : [ "live.gain~[2]", "live.gain~", 0 ],
-			"obj-4" : [ "live.gain~[7]", "live.gain~", 0 ],
-			"obj-11" : [ "live.gain~[3]", "live.gain~", 0 ],
-			"obj-12" : [ "live.gain~[4]", "live.gain~", 0 ]
+			"obj-4" : [ "live.gain~[7]", "live.gain~", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "audio_player.maxpat",
-				"bootpath" : "/Users/morgan/code/MariposaChandelier/Max",
+				"bootpath" : "/Users/Mariposa/Documents/MariposaChandelier/Max",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1

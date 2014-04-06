@@ -79,11 +79,12 @@ public class SoundController : MonoBehaviour {
 	}
 	
 	void Send(OscMessage msg) {
-		Debug.Log(string.Format(
+/*		Debug.Log(string.Format(
 			"Sending Sound Message: {0} {1}", 
 			msg.Address, 
 			msg.Values[0]
 		));
+		*/
 		// If we can't send messages, then NOOP
 		if (osc != null) {
 			osc.Send(msg);
