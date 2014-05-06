@@ -12,7 +12,7 @@ function Start () {
 	
 	seed = 256 * Vector2(Random.value-0.5f, Random.value-0.5f);	
 
-	var simBounds = GameObject.Find("SimulationBounds").GetComponent(BoxCollider);
+	var simBounds = GameObject.Find("AudioBounds").GetComponent(BoxCollider);
 	p0 = simBounds.transform.TransformPoint(simBounds.center - 0.4f * simBounds.size);
 	p1 = simBounds.transform.TransformPoint(simBounds.center + 0.4f * simBounds.size);
 	

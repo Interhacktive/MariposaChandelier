@@ -51,6 +51,7 @@
      <Compile Include="Assets\Plugins\AudioTrackController.cs" />
      <Compile Include="Assets\Plugins\Cable.cs" />
      <Compile Include="Assets\Plugins\Calibration.cs" />
+     <Compile Include="Assets\Plugins\ChandelierMode.cs" />
      <Compile Include="Assets\Plugins\DmxController.cs" />
      <Compile Include="Assets\Plugins\LED.cs" />
      <Compile Include="Assets\Plugins\LEDSender.cs" />
@@ -59,11 +60,21 @@
      <Compile Include="Assets\Plugins\MakingThings\Osc.cs" />
      <Compile Include="Assets\Plugins\MakingThings\Packet.cs" />
      <Compile Include="Assets\Plugins\MoveADirection.cs" />
+     <Compile Include="Assets\Plugins\NightTimeAudio.cs" />
+     <Compile Include="Assets\Plugins\ObjectGenerator.cs" />
      <Compile Include="Assets\Plugins\OscController.cs" />
+     <Compile Include="Assets\Plugins\ResetCube.cs" />
      <Compile Include="Assets\Plugins\Sensor.cs" />
      <Compile Include="Assets\Plugins\SensorOscDelegate.cs" />
+     <Compile Include="Assets\Plugins\Snake.cs" />
      <Compile Include="Assets\Plugins\SoundController.cs" />
+     <Compile Include="Assets\Plugins\SoundTrigger.cs" />
+     <Compile Include="Assets\Plugins\SunColorChanger.cs" />
+     <Compile Include="Assets\Plugins\SunFader.cs" />
+     <Compile Include="Assets\Plugins\SunMover.cs" />
      <Compile Include="Assets\Plugins\TintCollider.cs" />
+     <Compile Include="Assets\Plugins\TreeGrow.cs" />
+     <Compile Include="Assets\Plugins\disableMover.cs" />
      <None Include="Assets\Materials\Lantern.shader" />
      <None Include="Assets\Materials\Tint.shader" />
   </ItemGroup>

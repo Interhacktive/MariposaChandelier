@@ -14,6 +14,7 @@ public class MoveADirection : MonoBehaviour {
 	
 	void Update() {
 		node.position = node.position + speed * Time.deltaTime;
+		//rigidbody.velocity = transform.forward * speed.x;
 	}
 
 }

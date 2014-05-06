@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 228.0, 174.0, 1088.0, 593.0 ],
+		"rect" : [ 81.0, 146.0, 1088.0, 593.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1009,7 +1009,7 @@
 					}
 ,
 					"text" : "autopattr @autoname 1",
-					"varname" : "u812000382"
+					"varname" : "u711000133"
 				}
 
 			}
@@ -1136,7 +1136,7 @@
 									}
 ,
 									"text" : "autopattr",
-									"varname" : "u930000381"
+									"varname" : "u825000132"
 								}
 
 							}
@@ -1959,7 +1959,7 @@
 						"center_size" : 1.0,
 						"coord_angles" : 0,
 						"coord_system" : 0,
-						"db_unit" : -0.0,
+						"db_unit" : 0.0,
 						"dist_att" : 1.0,
 						"distance_mode" : 1,
 						"gain" : 1.0,

@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 563.0, 152.0, 836.0, 512.0 ],
+		"rect" : [ 524.0, 152.0, 836.0, 512.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1781,17 +1781,17 @@
 					"patching_rect" : [ 52.0, 452.0, 137.0, 20.0 ],
 					"restore" : 					{
 						"flonum" : [ 0.0 ],
-						"live.gain~[1]" : [ -13.999999 ],
-						"live.gain~[2]" : [ -0.461942 ],
-						"live.gain~[3]" : [ 0.666667 ],
-						"live.gain~[4]" : [ 0.598425 ],
-						"live.gain~[5]" : [ 0.666667 ],
-						"live.gain~[6]" : [ 0.666667 ],
-						"live.gain~[7]" : [ -3.181818 ]
+						"live.gain~[1]" : [ 0.0 ],
+						"live.gain~[2]" : [ 0.0 ],
+						"live.gain~[3]" : [ 0.0 ],
+						"live.gain~[4]" : [ 0.0 ],
+						"live.gain~[5]" : [ 0.0 ],
+						"live.gain~[6]" : [ 0.0 ],
+						"live.gain~[7]" : [ 4.204724 ]
 					}
 ,
 					"text" : "autopattr @autoname 1",
-					"varname" : "u886000134"
+					"varname" : "u719000080"
 				}
 
 			}
@@ -2274,26 +2274,35 @@
 						"audio_files.2" : "02_Parrots.wav",
 						"audio_files.3" : "03_Bees.wav",
 						"audio_files.4" : "04_Kukulkan.wav",
-						"audio_files.5" : "05_Drums.wav",
-						"audio_files.6" : "06_Ayotl.wav",
-						"audio_files.7" : "07_Tenabaris.wav",
-						"audio_files.8" : "08_Cenote.wav",
+						"audio_files.5" : "05_Ayotl.wav",
+						"audio_files.6" : "06_Trumpet.wav",
+						"audio_files.7" : "07_chichenitza.wav",
+						"audio_files.8" : "08_Cenote_New.wav",
 						"audio_files.9" : "09_Jaguar.wav",
 						"audio_files.10" : "10_Cricket.wav",
 						"audio_files.11" : "11_Night Spirits.wav",
 						"audio_files.12" : "12_Red_eyed_tree_frogs.wav",
 						"audio_files.13" : "13_Bats.wav",
 						"audio_files.14" : "14_Nightjar.wav",
-						"audio_files.15" : "15_Margay_Cat.wav",
-						"audio_files.16" : "17_Morning_Yucatan_jay.wav",
-						"audio_files.17" : "18_Morning_Dance.wav",
-						"audio_files.18" : "27_Magic_Voice.wav",
-						"audio_files.19" : "29_Chocolate_Tree.wav",
-						"audio_files.20" : "30_Jaguar_growl.wav",
-						"audio_files.21" : "32_Hurricane.wav",
-						"audio_files.22" : "33_Rain_Thunder_Wind.wav",
-						"audio_files.23" : "35_Slash_burn.wav",
-						"audio_files.24" : "36_Dance_of_the_Corn.wav"
+						"audio_files.15" : "15_Ocelot.wav",
+						"audio_files.16" : "16_Puma.wav",
+						"audio_files.17" : "17_Morning_Yucatan_jay.wav",
+						"audio_files.18" : "18_Morning_Dance.wav",
+						"audio_files.19" : "27_Magic_Voice.wav",
+						"audio_files.20" : "28_1-how_are_you.wav",
+						"audio_files.21" : "28_2-good_and_you.wav",
+						"audio_files.22" : "28_3-thankyou.wav",
+						"audio_files.23" : "28_4-whatsyourname.wav",
+						"audio_files.24" : "28_5-mynameis.wav",
+						"audio_files.25" : "28_6-bye.wav",
+						"audio_files.26" : "29_Chocolate_Tree.wav",
+						"audio_files.27" : "30_Jaguar_growl.wav",
+						"audio_files.28" : "31_ChichenItzaTop.wav",
+						"audio_files.29" : "32_Hurricane.wav",
+						"audio_files.30" : "33_Rain_Thunder_New.wav",
+						"audio_files.31" : "34_Somber.wav",
+						"audio_files.32" : "35_Slash_burn.wav",
+						"audio_files.33" : "36_Dance_of_the_Corn.wav"
 					}
 ,
 					"fontname" : "Arial",

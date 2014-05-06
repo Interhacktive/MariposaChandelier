@@ -21,40 +21,38 @@ public class LEDSender : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
-		if(sendCable == 1){
-
-		//BOARD #1
-		// send cables 1-3 to DMX endpoint 0
-		for(int i=0; i<3; ++i) {
-			cables[i].WriteWorkingBuffer();
-			Buffer.BlockCopy(cables[i].workingBuffer, 0, bigBuffer, i * sliceLength, sliceLength);
-		}
-		DmxController.inst.Send(1, bigBuffer, 3 * sliceLength, 1);
-		//Debug.Log("sending to network");
-
 				
-		//BOARD #2
-		// send cables 4-6 to DMX endpoint 0
-		for(int i=3; i<6; ++i) {
-			cables[i].WriteWorkingBuffer();
-			Buffer.BlockCopy(cables[i].workingBuffer, 0, bigBuffer, (i-3) * sliceLength, sliceLength);
-		}
-		DmxController.inst.Send(2, bigBuffer, 3 * sliceLength, 2);
+				//BOARD #1
+				// send cables 1-3 to DMX endpoint 0
+				for (int i=0; i<3; ++i) {
+						cables [i].WriteWorkingBuffer ();
+						Buffer.BlockCopy (cables [i].workingBuffer, 0, bigBuffer, i * sliceLength, sliceLength);
+				}
+				DmxController.inst.Send (1, bigBuffer, 3 * sliceLength, 1);
+				//Debug.Log("sending to network");
+				
+		
+				
+				//BOARD #2
+				// send cables 4-6 to DMX endpoint 0
+				for (int i=3; i<6; ++i) {
+						cables [i].WriteWorkingBuffer ();
+						Buffer.BlockCopy (cables [i].workingBuffer, 0, bigBuffer, (i - 3) * sliceLength, sliceLength);
+				}
+				DmxController.inst.Send (2, bigBuffer, 3 * sliceLength, 2);
 
 
-		}
-		if(sendCable == 1){
-		//BOARD #3
 
-		// send cable 7-9 to DMX endpoint 3
-		for(int i=6; i<9; ++i) {
-			cables[i].WriteWorkingBuffer();
-			Buffer.BlockCopy(cables[i].workingBuffer, 0, bigBuffer, (i-6) * sliceLength, sliceLength);
-		}
-		DmxController.inst.Send(3, bigBuffer, 3 * sliceLength, 3);
+				//BOARD #3
 
+				// send cable 7-9 to DMX endpoint 3
+				for (int i=6; i<9; ++i) {
+						cables [i].WriteWorkingBuffer ();
+						Buffer.BlockCopy (cables [i].workingBuffer, 0, bigBuffer, (i - 6) * sliceLength, sliceLength);
+				}
+				DmxController.inst.Send (3, bigBuffer, 3 * sliceLength, 3);
 
-
+	
 
 
 		//BOARD #4
@@ -65,9 +63,8 @@ public class LEDSender : MonoBehaviour {
 		}
 		DmxController.inst.Send(4, bigBuffer, 3 * sliceLength, 4);
 
-		}
-		if(sendCable == 1){
 
+	
 
 		//BOARD #5
 		// send cables 13 and 14 (N & P) to DMX endpoint 5
@@ -78,9 +75,13 @@ public class LEDSender : MonoBehaviour {
 		}
 		DmxController.inst.Send(5, bigBuffer2, 2 * sliceLength, 5);//board 4 is actually 5, starting at 0
 		//Debug.Log ("sending artnet to board #5");
-		}
+
+
+}
 
 
 
-	}
+
+
+
 }

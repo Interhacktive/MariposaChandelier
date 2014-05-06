@@ -95,7 +95,8 @@ public class AudioTrackController : MonoBehaviour {
 				//var pos = curr.transform.position.y*200.0f;
 
 				if(pos != oldPos){
-				SoundController.inst.SendPosition(i+1, pos);
+
+					SoundController.inst.SendPosition(i+1, 0);//pos
 				}
 				pos = oldPos;
 				yield return new WaitForFixedUpdate();			
