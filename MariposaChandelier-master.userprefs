@@ -1,0 +1,22 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/ChandelierMode.cs">
+    <Files>
+      <File FileName="../../Documents/unityproject/Mariposa/Assets/Plugins/TintCollider.cs" Line="1" Column="1" />
+      <File FileName="../../Documents/unityproject/Mariposa/Assets/Plugins/LED.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/LED.cs" Line="60" Column="4" />
+      <File FileName="Assets/Plugins/TintCollider.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/SunColorChanger.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/disableMover.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/SunMover.cs" Line="38" Column="3" />
+      <File FileName="Assets/Scripts/Bird.js" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/ChandelierMode.cs" Line="52" Column="82" />
+      <File FileName="Assets/Plugins/Sensor.cs" Line="171" Column="33" />
+      <File FileName="Assets/Scripts/Rain.js" Line="23" Column="26" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

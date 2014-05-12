@@ -20,7 +20,7 @@ public class ChandelierMode : MonoBehaviour {
 	//9 = none
 
 	public int currentAnimation = 0;
-	int prevValue = 0;
+	int prevValue = 1;
 	public GameObject[] animation;
 	public GameObject resetCube;
 	/*
@@ -48,6 +48,11 @@ public class ChandelierMode : MonoBehaviour {
 								animation [i].SetActive (false);
 						}
 						animation [currentAnimation].SetActive (true);
+			for(int c = 0;c< animation[currentAnimation].transform.childCount;c++){
+				animation[currentAnimation].transform.GetChild(c).gameObject.SetActive(true);
+
+			}
+	
 				
 	
 						
