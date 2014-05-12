@@ -15,12 +15,12 @@ public class SunColorChanger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		StartFade();
 	}
 
 	void StartFade(){
 		if (currentFade < 1 && fading) {
-						currentFade += Time.time * fadeTime/10;
+						currentFade += Time.deltaTime * fadeTime/100;
 						renderer.material.color = Color.Lerp (startColor, endColor, currentFade);
 				} else {
 			currentFade = 0;

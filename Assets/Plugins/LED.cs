@@ -2,9 +2,9 @@
 using UnityEngine;
 
 public class LED : MonoBehaviour {
-
+	
 	const float FadeOutRate = 0.15f;
-
+	
 	#if UNITY_EDITOR
 	Mesh mesh;
 	#endif
@@ -13,7 +13,7 @@ public class LED : MonoBehaviour {
 	float fadeRate = FadeOutRate;
 	Color32[] colors;
 	List<Collider> overlaps = new List<Collider>();
-	
+	GameObject lastObject;
 	void Awake() {
 		
 		#if UNITY_EDITOR
@@ -37,14 +37,15 @@ public class LED : MonoBehaviour {
 		// Set the target color.  We will fade-to this in the unity display.	
 		targetColor = c;
 	}
-
+	
 	void FixedUpdate() {
-		if (ColorsApprox(currentColor, targetColor)) {
+		if(lastObject != null){
+		if (ColorsApprox(currentColor, targetColor) || !lastObject.activeSelf) {
 			// we've achieved our target color - is it time to fade out
-			if (overlaps.Count == 0) {
-				targetColor = Color.black;
-				fadeRate = FadeOutRate;
-			}
+			//if (overlaps.Count == 0) {
+			targetColor = Color.black;
+			fadeRate = FadeOutRate;
+			//}
 		} else {
 			// we're still fading.
 			currentColor = EaseTowards(currentColor, targetColor, fadeRate);
@@ -56,11 +57,20 @@ public class LED : MonoBehaviour {
 			mesh.colors32 = colors;			
 			#endif
 		}
+		}
 		
 	}
 	
 	void OnTriggerEnter(Collider c) {
-		
+		if (c.CompareTag("TintCollider")) {
+			var tc = c.GetComponent<TintCollider>();
+			if(tc != null){
+				SetColor(tc.tintColor);
+				fadeRate = tc.rate;
+				lastObject = c.gameObject;
+			}
+		}
+		/*
 		// Look for collisions with a TintCollider
 		if (c.CompareTag("TintCollider")) {
 			if (!overlaps.Contains(c)) {
@@ -69,11 +79,31 @@ public class LED : MonoBehaviour {
 				SetColor(tc.tintColor);
 				fadeRate = tc.rate;
 			}
+			lastObject = c.gameObject;
+		}
+		*/
+	}
+	void OnTriggerStay(Collider c){
+		if (c.CompareTag("TintCollider")) {
+			var tc = c.GetComponent<TintCollider>();
+			if(tc != null){
+			SetColor(tc.tintColor);
+			fadeRate = tc.rate;
+			lastObject = c.gameObject;
+			}
 		}
 	}
-	
 	void OnTriggerExit(Collider c) {
-	
+		
+		if (c.CompareTag("TintCollider")) {
+			var tc = c.GetComponent<TintCollider>();
+			if(tc != null){
+				SetColor(tc.tintColor);
+				fadeRate = tc.rate;
+				lastObject = c.gameObject;
+			}
+		}
+		/*
 		// Look for the TintCollider Exitting
 		if (c.CompareTag("TintCollider") && overlaps.Contains(c)) {
 			overlaps.Remove(c);
@@ -83,7 +113,8 @@ public class LED : MonoBehaviour {
 				fadeRate = tc.rate;
 			}
 		}
-				
+		*/
+		
 	}
 	
 	static bool ColorsApprox(Color c1, Color c2) {

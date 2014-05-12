@@ -5,7 +5,7 @@ public class TintCollider : MonoBehaviour {
 	// Tint colliders are meshes which "tint" lanterns 
 	// when they come into contact.
 	
-	public Color tintColor;
+	public Color tintColor = Color.black;
 	public float rate=0.2f;
 	public bool destroyAutomatically = true;
 	internal Collider c;
@@ -15,7 +15,7 @@ public class TintCollider : MonoBehaviour {
 		gameObject.tag = "TintCollider";
 		var r = this.renderer;
 		if (r) {
-			tintColor = r.sharedMaterial.color;
+		//	tintColor = r.sharedMaterial.color;
 			tintColor.a = 1.0f;
 		}
 		c = this.collider;
