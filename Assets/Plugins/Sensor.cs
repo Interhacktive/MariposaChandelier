@@ -27,7 +27,7 @@ public class Sensor : MonoBehaviour
 		int[] readings;
 		int total = 0;
 		int index = 0;
-		int numReadings = 50;
+		public int numReadings = 50;
 		public bool localSoundActive = true;
 		public bool multipleSounds = false;
 		public AudioClip[] audioTracks;
@@ -165,7 +165,7 @@ public class Sensor : MonoBehaviour
 												}
 										}
 
-										if (!audio.isPlaying)
+										//if (!audio.isPlaying)
 												audio.Play ();
 								}
 								if (!specialAnimation) {

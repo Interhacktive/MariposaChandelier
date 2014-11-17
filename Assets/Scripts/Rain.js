@@ -2,6 +2,8 @@
 
 var rainDropPrefab : GameObject;
 var avgPeriod = 0.35;
+var offset = 0.0;
+
 private var nextDrop : RainDrop;
 
 
@@ -24,7 +26,7 @@ function Start () {
 		if (nextDrop == null) {			
 			Instantiate(
 				rainDropPrefab, 
-				cable.transform.position,
+				cable.transform.position + Vector3(0,Random.Range(0, -offset),0),
 				Quaternion.identity
 			);
 		} else {

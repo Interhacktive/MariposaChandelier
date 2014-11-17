@@ -132,8 +132,10 @@ public class DmxController : MonoBehaviour {
 			}
 			// Send outside the lock, so we don't block Unity
 			while(inbox.Count > 0) {
+
 				var packet = inbox.Dequeue();
 				client.Send(packet.packet, packet.packet.Length, packet.endpoint.host, packet.endpoint.port);
+				//Debug.Log ("sending packet: " + packet.endpoint.port);
 			}
 		}
 

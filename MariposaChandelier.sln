@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{A1654ED6-61FF-4491-9AE8-8F15A1A1AEE5}") = "MariposaChandelier", "Assembly-CSharp-firstpass.csproj", "{182C03ED-26CA-7AE6-65D0-DB02C84F01BE}"
 EndProject
+Project("{A1654ED6-61FF-4491-9AE8-8F15A1A1AEE5}") = "MariposaChandelier", "Assembly-CSharp.csproj", "{C32B495E-85FF-0EDF-2427-9D03F300FF92}"
+EndProject
 Project("{A1654ED6-61FF-4491-9AE8-8F15A1A1AEE5}") = "MariposaChandelier", "Assembly-CSharp-Editor.csproj", "{B3EE78F5-FD91-9EB5-B75C-0E5C0C6640BC}"
 EndProject
 Project("{A1654ED6-61FF-4491-9AE8-8F15A1A1AEE5}") = "MariposaChandelier", "Assembly-UnityScript.unityproj", "{00851A9F-D017-E5FD-FB3B-E69A048CFD5C}"
@@ -17,6 +19,10 @@ Global
 		{182C03ED-26CA-7AE6-65D0-DB02C84F01BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{182C03ED-26CA-7AE6-65D0-DB02C84F01BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{182C03ED-26CA-7AE6-65D0-DB02C84F01BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C32B495E-85FF-0EDF-2427-9D03F300FF92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C32B495E-85FF-0EDF-2427-9D03F300FF92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C32B495E-85FF-0EDF-2427-9D03F300FF92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C32B495E-85FF-0EDF-2427-9D03F300FF92}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B3EE78F5-FD91-9EB5-B75C-0E5C0C6640BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B3EE78F5-FD91-9EB5-B75C-0E5C0C6640BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3EE78F5-FD91-9EB5-B75C-0E5C0C6640BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,7 +35,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																															GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																							GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
